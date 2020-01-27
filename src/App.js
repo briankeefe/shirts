@@ -26,7 +26,7 @@ import {
 	faHome
 } from "@fortawesome/free-solid-svg-icons";
 import { grey } from "@material-ui/core/colors";
-import { Route, Switch, HashRouter as Router } from "react-router-dom";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Shirts from "./ShirtsPage";
 import Cart from "./Cart";
 import Paragraphs from "./Paragraphs";
@@ -132,75 +132,75 @@ export default function MiniDrawer() {
 	};
 
 	return (
-		<div className={classes.root}>
+		<Router>
 			<CssBaseline />
-			<AppBar
-				position="fixed"
-				className={clsx(classes.appBar, {
-					[classes.appBarShift]: open
-				})}
-			>
-				<Toolbar>
-					<IconButton
-						color="inherit"
-						aria-label="open drawer"
-						onClick={handleDrawerOpen}
-						edge="start"
-						className={clsx(classes.menuButton, {
-							[classes.hide]: open
-						})}
-					>
-						<MenuIcon />
-					</IconButton>
-					<Typography variant="h6" noWrap>
-						INK AHEAD
-					</Typography>
-				</Toolbar>
-			</AppBar>
-			<Drawer
-				variant="permanent"
-				className={clsx(classes.drawer, {
-					[classes.drawerOpen]: open,
-					[classes.drawerClose]: !open
-				})}
-				classes={{
-					paper: clsx({
+			<div className={classes.root}>
+				<CssBaseline />
+				<AppBar
+					position="fixed"
+					className={clsx(classes.appBar, {
+						[classes.appBarShift]: open
+					})}
+				>
+					<Toolbar>
+						<IconButton
+							color="inherit"
+							aria-label="open drawer"
+							onClick={handleDrawerOpen}
+							edge="start"
+							className={clsx(classes.menuButton, {
+								[classes.hide]: open
+							})}
+						>
+							<MenuIcon />
+						</IconButton>
+						<Typography variant="h6" noWrap>
+							INK AHEAD
+						</Typography>
+					</Toolbar>
+				</AppBar>
+				<Drawer
+					variant="permanent"
+					className={clsx(classes.drawer, {
 						[classes.drawerOpen]: open,
 						[classes.drawerClose]: !open
-					})
-				}}
-			>
-				<div className={classes.toolbar}>
-					<IconButton onClick={handleDrawerClose}>
-						{theme.direction === "rtl" ? (
-							<ChevronRightIcon />
-						) : (
-							<ChevronLeftIcon />
-						)}
-					</IconButton>
-				</div>
-				<Divider />
-				<List>
-					{["Home", "Shirts", "Cart"].map((text, index) => (
-						<ListItem button key={text}>
-							<ListItemIcon>{iconSwitch(index)}</ListItemIcon>
-							<ListItemText primary={text} />
-						</ListItem>
-					))}
-				</List>
-				<Divider />
-			</Drawer>
-			<main className={classes.content}>
-				<div className={classes.toolbar} />
-				<Router>
-					<CssBaseline />
+					})}
+					classes={{
+						paper: clsx({
+							[classes.drawerOpen]: open,
+							[classes.drawerClose]: !open
+						})
+					}}
+				>
+					<div className={classes.toolbar}>
+						<IconButton onClick={handleDrawerClose}>
+							{theme.direction === "rtl" ? (
+								<ChevronRightIcon />
+							) : (
+								<ChevronLeftIcon />
+							)}
+						</IconButton>
+					</div>
+					<Divider />
+					<List>
+						{["Home", "Shirts", "Cart"].map((text, index) => (
+							<ListItem button key={text}>
+								<ListItemIcon>{iconSwitch(index)}</ListItemIcon>
+								<ListItemText primary={text} />
+							</ListItem>
+						))}
+					</List>
+					<Divider />
+				</Drawer>
+				<main className={classes.content}>
+					<div className={classes.toolbar} />
 					<Switch>
 						<Route exact path="/" component={Paragraphs} />
 						<Route path="/shirts" component={Shirts} />
 						<Route path="/cart" component={Cart} />
 					</Switch>
-				</Router>
-			</main>
-		</div>
+				</main>
+			</div>
+		</Router>
 	);
 }
