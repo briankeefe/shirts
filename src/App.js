@@ -26,7 +26,7 @@ import {
 	faHome
 } from "@fortawesome/free-solid-svg-icons";
 import { grey } from "@material-ui/core/colors";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch, HashRouter as Router } from "react-router-dom";
 import Shirts from "./ShirtsPage";
 import Cart from "./Cart";
 import Paragraphs from "./Paragraphs";
