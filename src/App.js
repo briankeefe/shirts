@@ -25,6 +25,7 @@ import {
 	faShoppingCart,
 	faHome
 } from "@fortawesome/free-solid-svg-icons";
+import { grey } from "@material-ui/core/colors";
 
 library.add(faTshirt, faShoppingCart, faHome);
 const drawerWidth = 240;
@@ -34,6 +35,7 @@ const useStyles = makeStyles(theme => ({
 		display: "flex"
 	},
 	appBar: {
+		backgroundColor: grey[700],
 		zIndex: theme.zIndex.drawer + 1,
 		transition: theme.transitions.create(["width", "margin"], {
 			easing: theme.transitions.easing.sharp,
@@ -106,19 +108,19 @@ export default function MiniDrawer() {
 	const iconSwitch = index => {
 		if (index === 0) {
 			return (
-				<Link to="/">
+				<Link className="link" to="/">
 					<FontAwesomeIcon icon="home" />
 				</Link>
 			);
 		} else if (index === 1) {
 			return (
-				<Link to="shirts">
+				<Link className="link" to="shirts">
 					<FontAwesomeIcon icon="tshirt" />
 				</Link>
 			);
 		} else {
 			return (
-				<Link to="/cart">
+				<Link className="link" to="/cart">
 					<FontAwesomeIcon icon="shopping-cart" />
 				</Link>
 			);
@@ -147,7 +149,7 @@ export default function MiniDrawer() {
 						<MenuIcon />
 					</IconButton>
 					<Typography variant="h6" noWrap>
-						T-Shirts
+						INK AHEAD
 					</Typography>
 				</Toolbar>
 			</AppBar>
