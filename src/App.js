@@ -19,6 +19,7 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { Link } from "react-router-dom";
 import {
 	faTshirt,
 	faShoppingCart,
@@ -104,11 +105,23 @@ export default function MiniDrawer() {
 
 	const iconSwitch = index => {
 		if (index === 0) {
-			return <FontAwesomeIcon icon="home" />;
+			return (
+				<Link to="/">
+					<FontAwesomeIcon icon="home" />
+				</Link>
+			);
 		} else if (index === 1) {
-			return <FontAwesomeIcon icon="tshirt" />;
+			return (
+				<Link to="shirts">
+					<FontAwesomeIcon icon="tshirt" />
+				</Link>
+			);
 		} else {
-			return <FontAwesomeIcon icon="shopping-cart" />;
+			return (
+				<Link to="/cart">
+					<FontAwesomeIcon icon="shopping-cart" />
+				</Link>
+			);
 		}
 	};
 

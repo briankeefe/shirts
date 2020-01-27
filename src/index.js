@@ -6,6 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import { Route, Switch, HashRouter as Router } from "react-router-dom";
 import { CssBaseline } from "@material-ui/core";
 import Shirts from "./ShirtsPage";
+import Cart from "./Cart";
 
 const routing = (
 	<Router>
@@ -13,7 +14,7 @@ const routing = (
 		<Switch>
 			<Route exact path="/" component={App} />
 			<Route path="/shirts" component={Shirts} />
-			<Route path="/cart" component={Shirts} />
+			<Route path="/cart" component={Cart} />
 		</Switch>
 	</Router>
 );
