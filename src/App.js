@@ -30,6 +30,8 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Shirts from "./ShirtsPage";
 import Cart from "./Cart";
 import Paragraphs from "./Paragraphs";
+import GetQuote from "./GetQuote";
+import "./style/style.scss";
 
 library.add(faTshirt, faShoppingCart, faHome);
 const drawerWidth = 240;
@@ -195,7 +197,7 @@ export default function MiniDrawer() {
 				<main className={classes.content}>
 					<div className={classes.toolbar} />
 					<Switch>
-						<Route exact path="/" component={Paragraphs} />
+						<Route exact path="/" component={GetQuote} />
 						<Route path="/shirts" component={Shirts} />
 						<Route path="/cart" component={Cart} />
 					</Switch>
