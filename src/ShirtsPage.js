@@ -8,3 +8,5 @@ function shirts(){
         </div>
     )
 }
+
+export default shirts;
