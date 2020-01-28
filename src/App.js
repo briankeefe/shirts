@@ -115,19 +115,19 @@ export default function MiniDrawer() {
 		if (index === 0) {
 			return (
 				<Link className="link" to="/">
-					<FontAwesomeIcon icon="home" />
+					<FontAwesomeIcon className="faicon" icon="home" />
 				</Link>
 			);
 		} else if (index === 1) {
 			return (
 				<Link className="link" to="shirts">
-					<FontAwesomeIcon icon="tshirt" />
+					<FontAwesomeIcon className="faicon" icon="tshirt" />
 				</Link>
 			);
 		} else {
 			return (
 				<Link className="link" to="/cart">
-					<FontAwesomeIcon icon="shopping-cart" />
+					<FontAwesomeIcon className="faicon" icon="shopping-cart" />
 				</Link>
 			);
 		}

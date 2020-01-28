@@ -1,5 +1,9 @@
 .link {
-	text-decoration: none;
+	text-decoration: none !important;
+}
+
+.faicon {
+	color: black !important;
 }
 
 .page-box {
@@ -28,5 +32,5 @@
 }
 
 .MuiTextField-root {
-	margin-top: 16px;
+	margin-top: 8px !important;
 }

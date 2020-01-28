@@ -12,7 +12,13 @@ import "./style/style.scss";
 function Quote() {
 	return (
 		<Box>
-			<Grid spacing={3} container justify="center" align="center">
+			<Grid
+				spacing={3}
+				container
+				justify="center"
+				alignItems="center"
+				style={{ minHeight: "80vh" }}
+			>
 				<Grid item xs={12} md={8}>
 					<Card>
 						<CardContent>
@@ -32,16 +38,24 @@ function Quote() {
 								<Typography className="center-text" variant="h5">
 									Get a Quote Today!
 								</Typography>
-								<TextField variant="outlined" label="First Name" />
-								<TextField variant="outlined" label="Email" />
-								<TextField variant="outlined" label="Phone" />
-								<TextField
-									id="detail-field"
-									variant="outlined"
-									multiline
-									rows="3"
-									label="What are you looking for"
-								/>
+								<form>
+									<TextField
+										className="quote-field"
+										variant="filled"
+										label="First Name"
+										fullWidth
+									/>
+									<TextField fullWidth variant="filled" label="Email" />
+									<TextField fullWidth variant="filled" label="Phone" />
+									<TextField
+										id="detail-field"
+										variant="filled"
+										multiline
+										rows="3"
+										fullWidth
+										label="What are you looking for"
+									/>
+								</form>
 							</Box>
 						</CardContent>
 					</Card>
