@@ -38,18 +38,18 @@ function Quote() {
 								<Typography className="center-text" variant="h5">
 									Get a Quote Today!
 								</Typography>
-								<form>
+								<form autoComplete="off">
 									<TextField
 										className="quote-field"
-										variant="filled"
+										variant="outlined"
 										label="First Name"
 										fullWidth
 									/>
-									<TextField fullWidth variant="filled" label="Email" />
-									<TextField fullWidth variant="filled" label="Phone" />
+									<TextField fullWidth variant="outlined" label="Email" />
+									<TextField fullWidth variant="outlined" label="Phone" />
 									<TextField
 										id="detail-field"
-										variant="filled"
+										variant="outlined"
 										multiline
 										rows="3"
 										fullWidth
