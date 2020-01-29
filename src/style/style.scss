@@ -73,6 +73,13 @@ html * {
 
 .splash-page {
 	flex-grow: 1;
+	#shirt-stacks {
+		width: inherit;
+		max-height: 70vh;
+	}
+	.no-grow {
+		flex-grow: 0;
+	}
 }
 
 .translucent {
