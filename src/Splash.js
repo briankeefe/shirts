@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import ShirtStacks from "./content/shirtStacks.jpg";
 import "./style/style.scss";
+import { Link } from "react-router-dom";
 
 export default function Splash() {
 	return (
@@ -38,14 +39,16 @@ export default function Splash() {
 								<Typography align="center" variant="h4">
 									Learn how you can join Ink Ahead!
 								</Typography>
-								<Button
-									style={{ margin: "auto" }}
-									variant="contained"
-									color="primary"
-									href="/#/shirts"
-								>
-									Quote
-								</Button>
+								<Link className="link" to="/shirts">
+									<Button
+										style={{ margin: "auto" }}
+										variant="contained"
+										color="primary"
+										className="link"
+									>
+										Quote
+									</Button>
+								</Link>
 							</Grid>
 						</CardContent>
 					</Card>
