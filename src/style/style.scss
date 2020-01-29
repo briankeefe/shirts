@@ -1,3 +1,39 @@
+// // @font-face {
+// // 	font-family: "Cooper-Hewitt";
+// // 	src: url("../fonts/CooperHewitt-Heavy.otf") format(".otf");
+// // }
+
+@font-face {
+	font-family: "League-Gothic";
+	src: url("../fonts/LeagueGothic-Italic.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("../fonts/BebasNeue-Regular.otf") format("opentype");
+}
+
+.league {
+	font-family: "League-Gothic" !important;
+}
+
+.center-me {
+	position: absolute;
+	top: 48px;
+	right: 48px;
+	color: white;
+}
+
+.my-box {
+	position: relative !important;
+	text-align: center;
+	color: white;
+}
+
+html * {
+	font-family: "Open Sans" !important;
+}
+
 .link {
 	text-decoration: none !important;
 }
@@ -33,4 +69,13 @@
 
 .MuiTextField-root {
 	margin-top: 8px !important;
+}
+
+.splash-page {
+	flex-grow: 1;
+}
+
+.translucent {
+	background-color: black;
+	text-align: center;
 }

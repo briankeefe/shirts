@@ -1,15 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
 	Box,
 	TextField,
 	Grid,
 	Card,
 	CardContent,
-	Typography
+	Typography,
+	Button
 } from "@material-ui/core";
 import "./style/style.scss";
 
 function Quote() {
+	const [firstName, setFirstName] = useState("");
+	const [email, setEmail] = useState("");
+	const [phone, setPhone] = useState("");
+	const [desc, setDesc] = useState("");
+
+	const changeFirstName = e => {
+		setFirstName(e.target.value);
+	};
+
+	const changeEmail = e => {
+		setEmail(e.target.value);
+	};
+
+	const changePhone = e => {
+		setPhone(e.target.value);
+	};
+
+	const changeDesc = e => {
+		setDesc(e.target.value);
+	};
+
+	const logSubmission = () => {
+		console.log({
+			name: firstName,
+			email: email,
+			number: phone,
+			description: desc
+		});
+	};
+
 	return (
 		<Box>
 			<Grid
@@ -44,10 +75,26 @@ function Quote() {
 										variant="outlined"
 										label="First Name"
 										fullWidth
+										value={firstName}
+										onChange={changeFirstName}
 									/>
-									<TextField fullWidth variant="outlined" label="Email" />
-									<TextField fullWidth variant="outlined" label="Phone" />
 									<TextField
+										value={email}
+										onChange={changeEmail}
+										fullWidth
+										variant="outlined"
+										label="Email"
+									/>
+									<TextField
+										value={phone}
+										onChange={changePhone}
+										fullWidth
+										variant="outlined"
+										label="Phone"
+									/>
+									<TextField
+										value={desc}
+										onChange={changeDesc}
 										id="detail-field"
 										variant="outlined"
 										multiline
@@ -55,6 +102,15 @@ function Quote() {
 										fullWidth
 										label="What are you looking for"
 									/>
+									<Button
+										onClick={logSubmission}
+										style={{ marginTop: "8px" }}
+										fullWidth
+										variant="contained"
+										color="primary"
+									>
+										Submit
+									</Button>
 								</form>
 							</Box>
 						</CardContent>

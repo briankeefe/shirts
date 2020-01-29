@@ -23,7 +23,8 @@ import { Link } from "react-router-dom";
 import {
 	faTshirt,
 	faShoppingCart,
-	faHome
+	faHome,
+	faQuoteRight
 } from "@fortawesome/free-solid-svg-icons";
 import { grey } from "@material-ui/core/colors";
 import { Route, Switch, HashRouter as Router } from "react-router-dom";
@@ -32,8 +33,9 @@ import Cart from "./Cart";
 import Paragraphs from "./Paragraphs";
 import GetQuote from "./GetQuote";
 import "./style/style.scss";
+import Splash from "./Splash";
 
-library.add(faTshirt, faShoppingCart, faHome);
+library.add(faTshirt, faShoppingCart, faHome, faQuoteRight);
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
@@ -121,7 +123,7 @@ export default function MiniDrawer() {
 		} else if (index === 1) {
 			return (
 				<Link className="link" to="shirts">
-					<FontAwesomeIcon className="faicon" icon="tshirt" />
+					<FontAwesomeIcon className="faicon" icon="quote-right" />
 				</Link>
 			);
 		} else {
@@ -156,7 +158,7 @@ export default function MiniDrawer() {
 						>
 							<MenuIcon />
 						</IconButton>
-						<Typography variant="h6" noWrap>
+						<Typography variant="h3" noWrap>
 							INK AHEAD
 						</Typography>
 					</Toolbar>
@@ -197,8 +199,8 @@ export default function MiniDrawer() {
 				<main className={classes.content}>
 					<div className={classes.toolbar} />
 					<Switch>
-						<Route exact path="/" component={GetQuote} />
-						<Route path="/shirts" component={Shirts} />
+						<Route exact path="/" component={Splash} />
+						<Route path="/shirts" component={GetQuote} />
 						<Route path="/cart" component={Cart} />
 					</Switch>
 				</main>
